@@ -50,12 +50,10 @@ restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
     case "clash":
-      speech =
-        '<speak><audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your audio file</audio></speak>';
+      speech = '<speak><audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your audio file</audio></speak>';
       break;
     case "born to shine":
-      speech =
-        '<speak><audio clipBegin="1s" clipEnd="3s" src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your audio file</audio></speak>';
+      speech = '<speak><audio src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your audio file</audio></speak>';
       break;
   }
   return res.json({
