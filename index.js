@@ -18,8 +18,8 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
-      ? req.body.queryResult.parametrs.echoText
-      : "Seems like some problem. Speak again.";
+      ? "Enter a numerical number" 
+      : 2 * (req.body.queryResult.parameters.number);
   var speechResponse = {
     google: {
       expectUserResponse: true,
