@@ -46,30 +46,19 @@ restService.post("/echo", function(req, res) {
   });
 });
 
-restService.post("/audio", function(req, res) {
+restService.post("/video", function(req, res) {
   var speech = "";
-  if(req.body.result.parameters.AudioSample.toLowerCase() == "music one") {
+  if(req.body.result.parameters.AudioSample == "music one") {
     speech = '<speak>  <audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your MP3 audio file</audio></speak>',
   }
-   if(req.body.result.parameters.AudioSample.toLowerCase() == "music two") {
+  else {
     speech = '<speak>  <audio src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your MP3 audio file</audio></speak>',
   }
   
   return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
-  });
-});
-
-restService.post("/video", function(req, res) {
-  var speech = "" ; 
-  return res.json({
-    speech:
-      '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
-    displayText:
-      '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
-    source: "webhook-echo-sample"
+    source: "DILJIT"
   });
 });
 
