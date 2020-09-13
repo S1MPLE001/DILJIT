@@ -48,14 +48,13 @@ restService.post("/echo", function(req, res) {
 
 restService.post("/audio", function(req, res) {
   var speech = "";
-  switch (req.body.result.parameters.AudioSample.toLowerCase()) {
-    case "clash":
-      speech = '<speak><audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your audio file</audio></speak>';
-      break;
-    case "born to shine":
-      speech = '<speak><audio src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your audio file</audio></speak>';
-      break;
+  if(req.body.result.parameters.AudioSample.toLowerCase() == "music one") {
+    speech = '<speak>  <audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your MP3 audio file</audio></speak>',
   }
+   if(req.body.result.parameters.AudioSample.toLowerCase() == "music two") {
+    speech = '<speak>  <audio src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your MP3 audio file</audio></speak>',
+  }
+  
   return res.json({
     speech: speech,
     displayText: speech,
@@ -64,6 +63,7 @@ restService.post("/audio", function(req, res) {
 });
 
 restService.post("/video", function(req, res) {
+  var speech = "" ; 
   return res.json({
     speech:
       '<speak>  <audio src="https://www.youtube.com/watch?v=VX7SSnvpj-8">did not get your MP3 audio file</audio></speak>',
