@@ -20,6 +20,10 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText
       ? "Enter a numerical number" 
       : 2 * (req.body.queryResult.parameters.number);
+  
+   speech = (req.body.queryResult.parameters.number) && speech > 50 ? '<audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio>':
+   speech ;
+  
   var speechResponse = {
     google: {
       expectUserResponse: true,
@@ -34,9 +38,6 @@ restService.post("/echo", function(req, res) {
       }
     }
   };
- 
-   speech = (req.body.queryResult.parameters.number) && speech > 50 ? '<audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio>':
-   speech ;
   return res.json({
     payload: speechResponse,
     //data: speechResponse,
