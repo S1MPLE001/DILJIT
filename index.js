@@ -50,13 +50,13 @@ restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
     //Speech Synthesis Markup Language 
-    case "music one":
+    case "clash":
       speech =
-        '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
+        '<speak><audio src="https://www.youtube.com/watch?v=KX06ksuS6Xo">did not get your audio file</audio></speak>';
       break;
-    case "music two":
+    case "born to shine":
       speech =
-        '<speak><audio clipBegin="1s" clipEnd="3s" src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
+        '<speak><audio clipBegin="1s" clipEnd="3s" src="https://www.youtube.com/watch?v=dCmp56tSSmA">did not get your audio file</audio></speak>';
       break;
     case "music three":
       speech =
