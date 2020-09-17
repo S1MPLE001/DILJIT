@@ -21,7 +21,7 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.Disease
       ? "Disease" + "-" + req.body.queryResult.parameters.Disease
       : " ";
-  speech += "," ; 
+  speech += " " ; 
   
  //speech += "Treat" + "-" ;
   speech +=
@@ -30,7 +30,7 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.Treat
       ? "Treat" + "-" + req.body.queryResult.parameters.Treat
       : " ";
-  speech += "," ; 
+  speech += " " ; 
   
   //speech += "Date" + "-" ; 
   speech +=
@@ -38,6 +38,24 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.date
       ? "Date" + "-" + req.body.queryResult.parameters.date
+      : " ";
+  
+  speech += " " ; 
+  
+  speech +=
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.Bodypart
+      ? "Body part" + "-" + req.body.queryResult.parameters.Bodypart
+      : " ";
+  
+  speech += " " ; 
+  
+  speech +=
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.result
+      ? "Now Condition" + "-" + req.body.queryResult.parameters.result 
       : " ";
   
   
