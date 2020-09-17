@@ -14,30 +14,30 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech = "Disease" + "-" ; 
+  var speech = ""; 
    speech +=
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.Disease
-      ? req.body.queryResult.parameters.Disease
+      ? "Disease" + "-" + req.body.queryResult.parameters.Disease
       : " ";
   speech += "," ; 
   
- speech += "Treat" + "-" ;
+ //speech += "Treat" + "-" ;
   speech +=
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.Treat
-      ? req.body.queryResult.parameters.Treat
+      ? "Treat" + "-" + req.body.queryResult.parameters.Treat
       : " ";
   speech += "," ; 
   
-  speech += "Date" + "-" ; 
+  //speech += "Date" + "-" ; 
   speech +=
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.date
-      ? req.body.queryResult.parameters.date
+      ? "Date" + "-" + req.body.queryResult.parameters.date
       : " ";
   
   
