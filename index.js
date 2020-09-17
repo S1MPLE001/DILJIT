@@ -14,14 +14,33 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech = "Disease" + " " ; 
+  var speech = "Disease" + "-" ; 
    speech +=
     req.body.queryResult &&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.Disease
       ? req.body.queryResult.parameters.Disease
-      : "";
-   
+      : " ";
+  speech += "," ; 
+  
+ speech += "Treat" + "-" ;
+  speech +=
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.Treat
+      ? req.body.queryResult.parameters.Treat
+      : " ";
+  speech += "," ; 
+  
+  speech += "Date" + "-" ; 
+  speech +=
+    req.body.queryResult &&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.date
+      ? req.body.queryResult.parameters.date
+      : " ";
+  
+  
   var speechResponse = {
     google: {
       expectUserResponse: true,
